@@ -981,3 +981,19 @@ section { padding-block: clamp(64px, 9vw, 120px); }
   .pair { grid-template-columns: 1fr; }
   .pair__arrow { margin-top: 0; justify-self: center; transform: rotate(90deg); }
 }
+
+/* ---------- Student note ---------- */
+.note { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: clamp(28px, 5vw, 72px); align-items: center; }
+.note__copy { display: grid; gap: 16px; justify-items: start; }
+.note__copy p { color: var(--ink-soft); max-width: 44ch; }
+.note__quote { margin: 8px 0 0; padding: 22px 26px; background: var(--butter); border: 1.5px solid var(--ink); border-radius: 20px; max-width: 460px; }
+.note__quote p { font: 600 clamp(1.15rem, 2vw, 1.5rem)/1.35 var(--display); letter-spacing: -0.02em; color: var(--ink); }
+.note__quote footer { margin-top: 10px; font: 700 0.75rem/1.3 var(--body); letter-spacing: 0.12em; text-transform: uppercase; color: var(--red-deep); }
+.note__figure { margin: 0; display: grid; gap: 16px; }
+.note__frame { display: block; border: 1.5px solid var(--ink); border-radius: 18px; overflow: hidden; box-shadow: 6px 6px 0 var(--ink); transform: rotate(1.4deg); transition: transform 0.25s; background: #fff; }
+.note__frame:hover { transform: rotate(0deg); }
+.note__frame img { width: 100%; height: auto; display: block; }
+.note__figure figcaption { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 18px; font-size: 0.95rem; color: var(--ink-soft); }
+.note__figure figcaption a { color: var(--ink); font-weight: 700; text-underline-offset: 4px; }
+@media (max-width: 960px) { .note { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { .note__frame { transition: none; } }
