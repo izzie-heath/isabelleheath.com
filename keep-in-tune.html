@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Keep In Tune case study — Isabelle Heath</title>
+<meta name="description" content="Case study: designing and building Keep In Tune, a mobile app where friends share a song a day. Paper prototype to final React Native screens.">
+<meta name="theme-color" content="#e85234">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23E85234'/%3E%3Ctext x='16' y='22.5' font-size='17' font-weight='700' text-anchor='middle' fill='%23FFF9F2' font-family='sans-serif'%3Eih%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Figtree:wght@400;500;600;700&family=Unbounded:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="hero cs-hero" id="top">
+  <div class="wrap">
+    <nav class="topbar" aria-label="Primary">
+      <a class="wordmark" href="index.html">isabelle heath</a>
+      <ul class="pills">
+        <li><a class="pill" href="Isabelle_Heath_Resume.pdf" target="_blank" rel="noopener">Resume</a></li>
+        <li><a class="pill" href="portfolio.html">UI Portfolio</a></li>
+        <li><a class="pill" href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="cs-hero__grid">
+      <div class="cs-hero__copy">
+        <span class="script">case study</span>
+        <h1>Keep In Tune</h1>
+        <p class="hero__lede">A mobile app where friends share a song a day and sync up through music.</p>
+        <ul class="tags" aria-label="Focus areas"><li>Visual design</li><li>UX</li><li>Figma to React Native</li></ul>
+        <div class="hero__cta">
+          <a class="btn" href="#design">See the final screens</a>
+          <a class="btn btn--line" href="#process">Read the process</a>
+        </div>
+      </div>
+      <div class="phones" role="img" aria-label="Three screens from Keep In Tune: the welcome screen, the blurred feed, and a profile">
+        <img src="images/keep-in-tune/onb-1-welcome.jpg" alt="" width="626" height="1291">
+        <img src="images/keep-in-tune/home-1-blurred.jpg" alt="" width="605" height="1278">
+        <img src="images/keep-in-tune/pr-1-fav.jpg" alt="" width="693" height="1493">
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <div class="marquee__group">
+      <span>Paper prototype</span><i>✱</i><span>Digital wireframes</span><i>✱</i><span>User testing</span><i>✱</i><span>Visual design</span><i>✱</i><span>React Native</span><i>✱</i>
+    </div>
+    <div class="marquee__group">
+      <span>Paper prototype</span><i>✱</i><span>Digital wireframes</span><i>✱</i><span>User testing</span><i>✱</i><span>Visual design</span><i>✱</i><span>React Native</span><i>✱</i>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+
+  <section class="facts-wrap" aria-label="Project facts" style="padding-bottom:0">
+    <div class="wrap">
+      <dl class="facts">
+        <div><dt>My role</dt><dd>Visual Design Lead: brand, high-fidelity Figma, UI implementation, user testing</dd></div>
+        <div><dt>Team</dt><dd>Sam Ampuero, Matt Feist, and me. A BYU class project.</dd></div>
+        <div><dt>Platform</dt><dd>Cross-platform mobile app (React Native)</dd></div>
+        <div><dt>Tools</dt><dd>Figma, React Native, TypeScript, Node.js, Express, MongoDB, Spotify API</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section id="overview" aria-labelledby="overview-title">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="script">the idea</span>
+        <h2 id="overview-title" class="h2">From “how” to “why”</h2>
+      </div>
+      <div class="vision">
+        <div class="vision__card vision__card--old">
+          <span class="eyebrow">Original vision</span>
+          <p class="q">To foster deeper connections between friends through a daily sharing of music.</p>
+        </div>
+        <span class="vision__arrow" aria-hidden="true">→</span>
+        <div class="vision__card vision__card--new">
+          <span class="eyebrow">Final vision</span>
+          <p class="q">To synchronize and connect friendships through the universal language of music.</p>
+        </div>
+      </div>
+      <div class="prose">
+        <p>Our first statement described what the app does. The rewrite is about why it exists. “Synchronize” links straight to the name, Keep In Tune, and moves the idea from simple sharing toward coming together. “Universal language” raises the purpose: using music to build deeper connections, not just to post things.</p>
+        <p>Daily sharing is still the core feature. The new wording gave the team, future investors, and above all users a clearer reason for it.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--pink)" id="team" aria-labelledby="team-title">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="script" style="color:var(--deep)">who did what</span>
+        <h2 id="team-title" class="h2">The team</h2>
+      </div>
+      <div class="team">
+        <article class="box box--me">
+          <span class="eyebrow">Visual Design Lead</span>
+          <h3 class="who">Izzie Heath <small>Me</small></h3>
+          <ul>
+            <li>Created the color palette and brand</li>
+            <li>Made a high-fidelity Figma mockup</li>
+            <li>Implemented the Figma mockup in code</li>
+            <li>Ran user testing and iterated on the UX based on what we learned</li>
+          </ul>
+        </article>
+        <article class="box">
+          <span class="eyebrow">Software Developer / Architect</span>
+          <h3 class="who">Sam Ampuero</h3>
+          <ul>
+            <li>Designed the database tables and created them in MongoDB</li>
+            <li>Integrated MongoDB into the backend server</li>
+            <li>Built the frontend communicator that connects to the backend</li>
+            <li>Wired components to real data</li>
+            <li>Feature design and implementation</li>
+          </ul>
+        </article>
+        <article class="box">
+          <span class="eyebrow">Product Manager / API</span>
+          <h3 class="who">Matt Feist</h3>
+          <ul>
+            <li>Integrated the Spotify API</li>
+            <li>Organized team meetings and took notes in class</li>
+            <li>Feature design and implementation</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--beige)" id="process" aria-labelledby="process-title">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="script" style="color:var(--deep)">how it came together</span>
+        <h2 id="process-title" class="h2">From paper to pixels</h2>
+      </div>
+
+      <div class="step-block">
+        <div class="step-block__head">
+          <span class="eyebrow">01 · Paper prototype</span>
+          <h3 class="h2" style="font-size:clamp(1.3rem,2.4vw,1.8rem)">We started on paper and let feedback steer</h3>
+          <p>Notes on the prototype call out where in-class feedback and user tests changed the design.</p>
+        </div>
+        <figure class="figure">
+          <a class="figure__frame" href="images/keep-in-tune/paper-prototype.jpg" target="_blank" rel="noopener">
+            <img src="images/keep-in-tune/paper-prototype.jpg" width="1509" height="1483" loading="lazy" alt="Hand-drawn paper prototype of every Keep In Tune screen, with pink arrows showing the flow and notes explaining changes made after feedback">
+          </a>
+          <figcaption><span>Paper prototype with annotated flows and feedback-driven changes.</span><a href="images/keep-in-tune/paper-prototype.jpg" target="_blank" rel="noopener">Open full size ↗</a></figcaption>
+        </figure>
+
+        <div class="sub-head" style="margin-bottom:0">
+          <span class="eyebrow">What the feedback changed</span>
+        </div>
+        <div class="decisions">
+          <article class="box decision">
+            <span class="n" aria-hidden="true">1</span>
+            <p class="heard">People might use it to “stalk” friends instead of connecting.</p>
+            <p>So friends’ songs stay blurred until you post your own. You can see who posted, and the full feed unlocks once you share. It keeps the focus on connection, which is the point of the app.</p>
+          </article>
+          <article class="box decision">
+            <span class="n" aria-hidden="true">2</span>
+            <p class="heard">Focus on one music service: Spotify.</p>
+            <p>Based on in-class feedback, we scrapped Apple Music for this stage of development. We polled peers on social media and Spotify came back as the most used, which suits a target audience in their 20s.</p>
+          </article>
+          <article class="box decision">
+            <span class="n" aria-hidden="true">3</span>
+            <p class="heard">Reshape favorites and add a way to look back.</p>
+            <p>Spotify’s API limited what favorites could include, so we reshaped them. After in-class feedback we also added a History tab where you can see everything you’ve posted. The feed layout was finalized after user tests.</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="step-block">
+        <div class="step-block__head">
+          <span class="eyebrow">02 · Digital wireframes</span>
+          <h3 class="h2" style="font-size:clamp(1.3rem,2.4vw,1.8rem)">Mapping the flows in Figma</h3>
+          <p>Four flows: onboarding, home and posting, friends, and user profile, including a playlist feature we later cut.</p>
+        </div>
+        <figure class="figure">
+          <a class="figure__frame figure__frame--dark" href="images/keep-in-tune/wireframes.jpg" target="_blank" rel="noopener">
+            <img src="images/keep-in-tune/wireframes.jpg" width="2016" height="1376" loading="lazy" alt="Grayscale Figma wireframes grouped into onboarding, home and posting, friends, and user profile flows, connected with prototype arrows">
+          </a>
+          <figcaption><span>Low-fidelity wireframes with prototype connections.</span><a href="images/keep-in-tune/wireframes.jpg" target="_blank" rel="noopener">Open full size ↗</a></figcaption>
+        </figure>
+      </div>
+
+      <div class="step-block">
+        <div class="step-block__head">
+          <span class="eyebrow">03 · Visual identity</span>
+          <h3 class="h2" style="font-size:clamp(1.3rem,2.4vw,1.8rem)">A dark interface with one bright accent</h3>
+          <p>I created the palette and brand, then built the high-fidelity mockup in Figma and implemented it in React Native. Dark surfaces carry a single lime accent for primary actions and active states.</p>
+        </div>
+        <div class="swatches" role="list" aria-label="Color palette">
+          <div class="swatch" role="listitem"><div class="swatch__chip" style="background:#d7f269"></div><p><strong>Lime</strong>#D7F269<br>Primary buttons, active tab</p></div>
+          <div class="swatch" role="listitem"><div class="swatch__chip" style="background:#1e2023"></div><p><strong>Background</strong>#1E2023<br>App background</p></div>
+          <div class="swatch" role="listitem"><div class="swatch__chip" style="background:#2b2d33"></div><p><strong>Surface</strong>#2B2D33<br>Cards</p></div>
+          <div class="swatch" role="listitem"><div class="swatch__chip" style="background:#34363d"></div><p><strong>Raised</strong>#34363D<br>Raised surfaces</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--blue)" id="design" aria-labelledby="design-title">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="script" style="color:var(--deep)">the final app</span>
+        <h2 id="design-title" class="h2">Final screens</h2>
+        <p>Four areas, each built around the idea of syncing up with friends.</p>
+      </div>
+
+      <div class="flow">
+        <div class="flow__head">
+          <div><span class="eyebrow" style="color:var(--deep)">Onboarding</span><h3>Log in with Spotify</h3></div>
+          <p>Users sign in through Spotify, then personalize. Favorites are pre-filled from what they listen to most, and any of them can be swapped by searching Spotify. The last step suggests friends who already use the app.</p>
+        </div>
+        <div class="shots" role="region" aria-label="Onboarding screens, scrollable" tabindex="0">
+          <figure class="shot"><img src="images/keep-in-tune/onb-1-welcome.jpg" width="626" height="1291" loading="lazy" alt="Welcome screen reading Share what you are playing today, with a Login with Spotify button"><figcaption>Welcome</figcaption></figure>
+          <figure class="shot"><img src="images/keep-in-tune/onb-2-spotify.jpg" width="626" height="1291" loading="lazy" alt="Spotify permission screen asking to connect to Keep In Tune"><figcaption>Spotify login</figcaption></figure>
+          <figure class="shot"><img src="images/keep-in-tune/onb-3-profile.jpg" width="457" height="1357" loading="lazy" alt="Profile personalization with photo, handle, favorite songs, and top artists"><figcaption>Personalize</figcaption></figure>
+          <figure class="shot"><img src="images/keep-in-tune/onb-4-friends.jpg" width="626" height="1291" loading="lazy" alt="Add Friends screen with handle search and friend suggestions from Spotify"><figcaption>Add friends</figcaption></figure>
+        </div>
+      </div>
+
+      <div class="flow">
+        <div class="flow__head">
+          <div><span class="eyebrow" style="color:var(--deep)">Home feed</span><h3>Post to unlock</h3></div>
+          <p>The feed is the core of the app. Until you post your song of the day, friends’ posts stay blurred. Once you share, the feed unlocks and you can like, comment, and play a 30-second preview.</p>
+        </div>
+        <div class="shots" role="region" aria-label="Home feed screens, scrollable" tabindex="0">
+          <figure class="shot"><img src="images/keep-in-tune/home-1-blurred.jpg" width="605" height="1278" loading="lazy" alt="Feed asking users to share first, with friends’ songs hidden until they post"><figcaption>Blurred home</figcaption></figure>
+          <figure class="shot"><img src="images/keep-in-tune/home-2-select.jpg" width="605" height="1278" loading="lazy" alt="Song search results from Spotify with a selection circle on each row"><figcaption>Pick a song</figcaption></figure>
+          <figure class="shot"><img src="images/keep-in-tune/home-3-caption.jpg" width="606" height="1278" loading="lazy" alt="Caption pop-up with a Share Song button"><figcaption>Add a caption</figcaption></figure>
+          <figure class="shot"><img src="images/keep-in-tune/home-4-feed.jpg" width="490" height="1631" loading="lazy" alt="Unlocked feed of friends’ posts with album art, play, like, and comment controls"><figcaption>Main feed</figcaption></figure>
+          <figure class="shot"><img src="images/keep-in-tune/home-5-comments.jpg" width="605" height="1278" loading="lazy" alt="Comments pop-up with an add comment field and Post button"><figcaption>Comments</figcaption></figure>
+        </div>
+      </div>
+
+      <div class="flow">
+        <div class="flow__head">
+          <div><span class="eyebrow" style="color:var(--deep)">Friends</span><h3>Find your people</h3></div>
+          <p>Search by handle, send and accept requests on one page, and see suggestions from Spotify friends and friends of friends. Who you connect with decides whose songs show up in your feed.</p>
+        </div>
+        <div class="shots" role="region" aria-label="Friends screens, scrollable" tabindex="0">
+          <figure class="shot"><img src="images/keep-in-tune/fr-1-tab.jpg" width="616" height="1630" loading="lazy" alt="Friends tab with search, requests, current friends, and suggested friends"><figcaption>Friends tab</figcaption></figure>
+          <figure class="shot"><img src="images/keep-in-tune/fr-2-profile-fav.jpg" width="604" height="1392" loading="lazy" alt="A friend’s profile on the Favorites tab, showing favorite songs and artists"><figcaption>Friend’s favorites</figcaption></figure>
+          <figure class="shot"><img src="images/keep-in-tune/fr-3-profile-hist.jpg" width="668" height="1630" loading="lazy" alt="A friend’s profile on the History tab, showing songs they have posted"><figcaption>Friend’s history</figcaption></figure>
+        </div>
+      </div>
+
+      <div class="flow">
+        <div class="flow__head">
+          <div><span class="eyebrow" style="color:var(--deep)">Profile</span><h3>Your taste, on display</h3></div>
+          <p>Your top three songs and artists live under Favorites and can be changed any time. History is a grid of everything you’ve posted, and each song opens to show the likes and comments it got.</p>
+        </div>
+        <div class="shots" role="region" aria-label="Profile screens, scrollable" tabindex="0">
+          <figure class="shot"><img src="images/keep-in-tune/pr-1-fav.jpg" width="693" height="1493" loading="lazy" alt="Your profile on the Favorites tab"><figcaption>Favorites</figcaption></figure>
+          <figure class="shot"><img src="images/keep-in-tune/pr-2-replace.jpg" width="693" height="1413" loading="lazy" alt="Replace favorite song pop-up with a Spotify search"><figcaption>Swap a favorite</figcaption></figure>
+          <figure class="shot"><img src="images/keep-in-tune/pr-3-history.jpg" width="693" height="1413" loading="lazy" alt="Your profile on the History tab with a grid of posted songs"><figcaption>History</figcaption></figure>
+          <figure class="shot"><img src="images/keep-in-tune/pr-4-popup.jpg" width="693" height="1413" loading="lazy" alt="History pop-up showing a past post with its likes and comments"><figcaption>Post details</figcaption></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tech" aria-labelledby="tech-title">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="script">under the hood</span>
+        <h2 id="tech-title" class="h2">Technology decisions</h2>
+      </div>
+      <div class="tech">
+        <article class="box">
+          <span class="eyebrow">Front end</span>
+          <h3>React Native</h3>
+          <p>All three of us already knew React, TypeScript, and CSS, so the barrier to entry was low. It also lets one codebase cover both Android and Apple. We were very satisfied with it.</p>
+          <ul class="tags"><li>React Native</li><li>TypeScript</li></ul>
+        </article>
+        <article class="box">
+          <span class="eyebrow">Backend</span>
+          <h3>Node.js, Express, MongoDB</h3>
+          <p>Our team knew them best. MongoDB’s interface is simple and free, Express let us host local servers on our own devices, Node.js connected the front end through APIs, and TypeScript stayed the common language across the app.</p>
+          <ul class="tags"><li>Node.js</li><li>Express</li><li>MongoDB</li><li>TypeScript</li></ul>
+        </article>
+        <article class="box">
+          <span class="eyebrow">API</span>
+          <h3>Spotify</h3>
+          <p>Spotify powers sign-in, listening history, friend suggestions, search, and previews. We chose it after polling peers: every poll came back saying Spotify was the most used, which fits our audience of people in their 20s.</p>
+          <ul class="tags"><li>Spotify API</li></ul>
+        </article>
+      </div>
+
+      <div class="sub-head">
+        <span class="eyebrow">What we cut, and why</span>
+        <h3 class="h2" style="font-size:clamp(1.3rem,2.4vw,1.8rem)">Scope trade-offs</h3>
+      </div>
+      <div class="cuts">
+        <article class="box box--dashed">
+          <h3>Apple Music &amp; YouTube Music</h3>
+          <p>We first planned to support Spotify, Apple, and YouTube Music for accessibility. Because of time we narrowed it to Spotify only.</p>
+        </article>
+        <article class="box box--dashed">
+          <h3>Playlist feature</h3>
+          <p>An early plan let you collect each day’s songs into a playlist. We dropped it because of time, and because it lined up least with the vision.</p>
+        </article>
+      </div>
+      <p class="prose" style="margin-top:28px">Everything we cut is on the list to add in the future.</p>
+    </div>
+  </section>
+
+  <section class="ask" style="padding-top:0" aria-labelledby="ask-title">
+    <div class="wrap">
+      <div class="ask__box">
+        <span class="tag">More work</span>
+        <h2 id="ask-title" class="h2">Back to the portfolio</h2>
+        <p>More case studies are on the way. Or take a look at the code side of my work.</p>
+        <div class="hero__cta" style="justify-content:center">
+          <a class="btn" href="portfolio.html">UI portfolio</a>
+          <a class="btn btn--line" href="index.html#projects">Software projects</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="contact" id="contact">
+  <div class="contact__stripes" aria-hidden="true"></div>
+  <div class="wrap contact__inner">
+    <span class="script">say hi</span>
+    <h2>Let’s work <em>together.</em></h2>
+    <p class="contact__lede">I’m looking for internships and future roles in software engineering and UI/UX. I’d love to hear from you.</p>
+    <div class="contact__row">
+      <a class="btn btn--cream" href="mailto:izziecheath@gmail.com">izziecheath@gmail.com</a>
+      <a class="btn btn--ghost" href="https://www.linkedin.com/in/isabelleheath05" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn btn--ghost" href="https://github.com/izzie-heath" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn btn--ghost" href="Isabelle_Heath_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+    </div>
+    <div class="contact__meta">
+      <span>Provo, UT · <a href="tel:+12813232295">(281) 323-2295</a></span>
+      <span>© 2026 Isabelle Heath · <a href="#top">Back to top ↑</a></span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

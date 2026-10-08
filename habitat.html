@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HABITat case study — Isabelle Heath</title>
+<meta name="description" content="Case study: HABITat, a gamified habit tracker I designed, built, and deployed on my own with React, Express, MongoDB, and WebSockets.">
+<meta name="theme-color" content="#e85234">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23E85234'/%3E%3Ctext x='16' y='22.5' font-size='17' font-weight='700' text-anchor='middle' fill='%23FFF9F2' font-family='sans-serif'%3Eih%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Figtree:wght@400;500;600;700&family=Unbounded:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="hero cs-hero" id="top">
+  <div class="wrap">
+    <nav class="topbar" aria-label="Primary">
+      <a class="wordmark" href="index.html">isabelle heath</a>
+      <ul class="pills">
+        <li><a class="pill" href="Isabelle_Heath_Resume.pdf" target="_blank" rel="noopener">Resume</a></li>
+        <li><a class="pill" href="portfolio.html">UI Portfolio</a></li>
+        <li><a class="pill" href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="cs-hero__grid">
+      <div class="cs-hero__copy">
+        <span class="script">case study</span>
+        <h1>HABITat</h1>
+        <p class="hero__lede">A gamified habit tracker where you compete on consistency. I designed, built, and deployed the whole thing on my own for BYU’s Web Programming class.</p>
+        <ul class="tags" aria-label="Focus areas"><li>Solo project</li><li>React</li><li>Node &amp; MongoDB</li></ul>
+        <div class="hero__cta">
+          <a class="btn" href="#screens">See the app</a>
+          <a class="btn btn--line" href="https://github.com/izzie-heath/HABITat" target="_blank" rel="noopener">View the code ↗</a>
+        </div>
+      </div>
+      <figure class="browser">
+        <div class="browser__bar" aria-hidden="true"><i></i><i></i><i></i></div>
+        <img src="images/habitat/dashboard.jpg" width="1512" height="1250" alt="The HABITat dashboard: a greeting, a motivational quote, a checklist of daily habits with streak bars, and a leaderboard preview">
+      </figure>
+    </div>
+  </div>
+</header>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <div class="marquee__group">
+      <span>Design</span><i>✱</i><span>React</span><i>✱</i><span>Express</span><i>✱</i><span>MongoDB</span><i>✱</i><span>WebSockets</span><i>✱</i><span>Deployment</span><i>✱</i>
+    </div>
+    <div class="marquee__group">
+      <span>Design</span><i>✱</i><span>React</span><i>✱</i><span>Express</span><i>✱</i><span>MongoDB</span><i>✱</i><span>WebSockets</span><i>✱</i><span>Deployment</span><i>✱</i>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+
+  <section class="facts-wrap" aria-label="Project facts" style="padding-bottom:0">
+    <div class="wrap">
+      <dl class="facts">
+        <div><dt>My role</dt><dd>Everything: design, front end, back end, and deployment</dd></div>
+        <div><dt>Course</dt><dd>BYU CS 260, Web Programming</dd></div>
+        <div><dt>Timeline</dt><dd>September – December 2025</dd></div>
+        <div><dt>Built with</dt><dd>React, Vite, Express, MongoDB, WebSockets, AWS</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="ask" style="padding-top:clamp(48px,7vw,88px);padding-bottom:0" aria-labelledby="status-title">
+    <div class="wrap">
+      <div class="ask__box">
+        <span class="tag">Heads up</span>
+        <h2 id="status-title" class="h2">The live app is switched off</h2>
+        <p>HABITat started as a class project, and I ran it on AWS with its own domain. The hosting costs added up, so I disconnected most of the AWS services after the class, and the live site no longer works properly. The motivational-quote service it used has also stopped responding.</p>
+        <p>The screenshots below come from running the real code on my computer with sample data. The full code is on GitHub.</p>
+        <a class="btn" href="https://github.com/izzie-heath/HABITat" target="_blank" rel="noopener">View the code ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="idea" aria-labelledby="idea-title">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="script">the idea</span>
+        <h2 id="idea-title" class="h2">A place where good habits grow</h2>
+      </div>
+      <div class="prose" style="margin-top:0">
+        <p>For anyone who feels forgetful, unmotivated, or disorganized, HABITat turns a daily to-do list into a game. You check off your habits each day, build up streaks, and see how your consistency stacks up against everyone else’s.</p>
+      </div>
+      <div class="tech" style="margin-top:clamp(32px,4vw,56px)">
+        <article class="box"><h3>Daily habits</h3><p>Add the habits you want to keep, such as going to the gym or drinking water, and check them off each day. They reset every morning.</p></article>
+        <article class="box"><h3>Streaks</h3><p>Finish a habit on consecutive days and its streak grows. Miss a day and it starts over, so consistency is what counts.</p></article>
+        <article class="box"><h3>Leaderboard</h3><p>Every user’s total streak is ranked on a shared leaderboard, so you can see how you compare.</p></article>
+        <article class="box"><h3>Live updates</h3><p>When someone checks off a habit, the leaderboard re-sorts for everyone with the page open. No refresh needed.</p></article>
+        <article class="box"><h3>Quote of the day</h3><p>The dashboard greets you with a motivational quote pulled from a third-party quotes service.</p></article>
+        <article class="box"><h3>Accounts</h3><p>People register and log in, and each person’s habits are stored privately under their account.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--beige)" id="design" aria-labelledby="design-title">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="script" style="color:var(--deep)">design to code</span>
+        <h2 id="design-title" class="h2">From a sketch to a working app</h2>
+        <p>I started by mocking up the dashboard in NinjaMock to decide what mattered most: today’s habits, their streaks, and the leaderboard, all in one view.</p>
+      </div>
+      <div class="pair">
+        <h3 class="pair__title">Dashboard</h3>
+        <figure class="figure">
+          <span class="pair__tag pair__tag--before">Before · Wireframe</span>
+          <a class="figure__frame browser" href="images/habitat/wireframe.jpg" target="_blank" rel="noopener">
+            <span class="browser__bar" aria-hidden="true"><i></i><i></i><i></i></span>
+            <img src="images/habitat/wireframe.jpg" width="1181" height="737" loading="lazy" alt="Wireframe of the HABITat dashboard with a green header, a habits checklist, streak bars, and a leaderboard card">
+          </a>
+        </figure>
+        <span class="pair__arrow" aria-label="became" role="img">→</span>
+        <figure class="figure">
+          <span class="pair__tag pair__tag--after">After · Built app</span>
+          <a class="figure__frame browser" href="images/habitat/dashboard.jpg" target="_blank" rel="noopener">
+            <span class="browser__bar" aria-hidden="true"><i></i><i></i><i></i></span>
+            <img src="images/habitat/dashboard-pair.jpg" width="1512" height="943" loading="lazy" alt="The built HABITat dashboard, running with sample data">
+          </a>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="brand" aria-labelledby="brand-title">
+    <div class="wrap">
+      <div class="mockups">
+        <figure class="figure">
+          <div class="art__frame" style="background:#f2f8f2"><img src="images/habitat/mascot.png" width="560" height="660" loading="lazy" alt="HABITat’s mascot: a round, smiling seedling with a green sprout growing from a patch of soil on its head" style="max-height:340px;width:auto"></div>
+          <figcaption style="justify-content:center"><span>The mascot, illustrated by my sister, a digital artist.</span></figcaption>
+        </figure>
+        <div class="stack">
+          <div>
+            <span class="eyebrow">The look</span>
+            <h2 id="brand-title" class="h2" style="font-size:clamp(1.3rem,2.4vw,1.8rem);margin-top:8px">Green, friendly, and growing</h2>
+            <p style="color:var(--ink-soft);margin-top:10px">A leafy green palette and a bold display typeface set the tone, and a small sprouting mascot gives the app a face. Streak bars fill in green as habits grow.</p>
+          </div>
+          <div class="swatches" style="grid-template-columns:repeat(4,minmax(0,1fr))" role="list" aria-label="Color palette">
+            <div class="swatch" role="listitem"><div class="swatch__chip" style="background:#4a7c59"></div><p><strong>Primary</strong>#4A7C59</p></div>
+            <div class="swatch" role="listitem"><div class="swatch__chip" style="background:#6db87a"></div><p><strong>Fresh</strong>#6DB87A</p></div>
+            <div class="swatch" role="listitem"><div class="swatch__chip" style="background:#a8d5b0"></div><p><strong>Light</strong>#A8D5B0</p></div>
+            <div class="swatch" role="listitem"><div class="swatch__chip" style="background:#2d5a3d"></div><p><strong>Deep</strong>#2D5A3D</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--blue)" id="screens" aria-labelledby="screens-title">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="script" style="color:var(--deep)">the app</span>
+        <h2 id="screens-title" class="h2">Screens</h2>
+        <p>Screenshots of the real code running locally, with sample users and sample habits.</p>
+      </div>
+      <div class="screens">
+        <figure class="figure">
+          <a class="figure__frame browser" href="images/habitat/home.jpg" target="_blank" rel="noopener">
+            <span class="browser__bar" aria-hidden="true"><i></i><i></i><i></i></span>
+            <img src="images/habitat/home.jpg" width="1512" height="935" loading="lazy" alt="HABITat home page with the mascot, a Welcome to HABITat heading, and a Get Started button">
+          </a>
+          <figcaption><strong>Home</strong><span>A welcome page that explains the idea.</span></figcaption>
+        </figure>
+        <figure class="figure">
+          <a class="figure__frame browser" href="images/habitat/login.jpg" target="_blank" rel="noopener">
+            <span class="browser__bar" aria-hidden="true"><i></i><i></i><i></i></span>
+            <img src="images/habitat/login.jpg" width="1512" height="935" loading="lazy" alt="HABITat login card with username and password fields and a link to register">
+          </a>
+          <figcaption><strong>Login</strong><span>Register or log in to keep your own habits.</span></figcaption>
+        </figure>
+        <figure class="figure">
+          <a class="figure__frame browser" href="images/habitat/dashboard.jpg" target="_blank" rel="noopener">
+            <span class="browser__bar" aria-hidden="true"><i></i><i></i><i></i></span>
+            <img src="images/habitat/dashboard.jpg" width="1512" height="1250" loading="lazy" alt="HABITat dashboard with a daily habit checklist, streak bars, and a leaderboard preview">
+          </a>
+          <figcaption><strong>Dashboard</strong><span>Check off habits, watch streaks grow, and glance at the leaderboard.</span></figcaption>
+        </figure>
+        <figure class="figure">
+          <a class="figure__frame browser" href="images/habitat/leaderboard.jpg" target="_blank" rel="noopener">
+            <span class="browser__bar" aria-hidden="true"><i></i><i></i><i></i></span>
+            <img src="images/habitat/leaderboard.jpg" width="1512" height="600" loading="lazy" alt="HABITat leaderboard table ranking five sample users by total streak">
+          </a>
+          <figcaption><strong>Leaderboard</strong><span>Ranks everyone by total streak and updates live over a WebSocket.</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="build" aria-labelledby="build-title">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="script">under the hood</span>
+        <h2 id="build-title" class="h2">What happens when you check off a habit</h2>
+        <p>The full stack is mine, from the button you click to the database it writes to.</p>
+      </div>
+      <ol class="steps" style="list-style:none;margin:0;padding:0">
+        <li class="step"><b>01</b><h3>The app updates</h3><p>React marks the habit done. If it was finished yesterday the streak grows by one, otherwise it restarts at one.</p></li>
+        <li class="step"><b>02</b><h3>The server saves it</h3><p>The app sends the change to my Express API, which checks your login cookie and stores the habit in MongoDB.</p></li>
+        <li class="step"><b>03</b><h3>Streaks get totaled</h3><p>The server adds up all of your habits’ streaks into a single score for the leaderboard.</p></li>
+        <li class="step"><b>04</b><h3>Everyone sees it</h3><p>The new score is pushed over a WebSocket to every open leaderboard, which re-sorts instantly.</p></li>
+      </ol>
+      <div class="prose">
+        <p>Passwords are hashed with bcrypt before they’re stored, and each login sets a secure, HTTP-only cookie. I deployed the app to an AWS server with its own domain name and HTTPS.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="exp" id="timeline" aria-labelledby="timeline-title">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="script">how it came together</span>
+        <h2 id="timeline-title" class="h2">Built in stages</h2>
+      </div>
+      <div class="jobs">
+        <article class="job">
+          <p class="job__when">Sep 2025</p>
+          <div><h3>Plan and first pages</h3><ul><li>Wrote the pitch and feature list, sketched the dashboard, and built the HTML pages: home, login, sign up, dashboard, and leaderboard.</li></ul></div>
+        </article>
+        <article class="job">
+          <p class="job__when">Oct 2025</p>
+          <div><h3>Styling and React</h3><ul><li>Styled every page in CSS, then moved the app to React with Vite and React Router.</li></ul></div>
+        </article>
+        <article class="job">
+          <p class="job__when">Nov 2025</p>
+          <div><h3>Back end and database</h3><ul><li>Built the Express service with login, logout, and habit endpoints, connected the quotes service, and stored users and habits in MongoDB.</li></ul></div>
+        </article>
+        <article class="job">
+          <p class="job__when">Dec 2025</p>
+          <div><h3>Real-time leaderboard</h3><ul><li>Added the WebSocket server and connected the leaderboard so scores update live.</li></ul></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="ask" style="padding-top:clamp(64px,9vw,120px)" aria-labelledby="ask-title">
+    <div class="wrap">
+      <div class="ask__box">
+        <span class="tag">More work</span>
+        <h2 id="ask-title" class="h2">Read the code</h2>
+        <p>The app isn’t live anymore, but everything is on GitHub.</p>
+        <div class="hero__cta" style="justify-content:center">
+          <a class="btn" href="https://github.com/izzie-heath/HABITat" target="_blank" rel="noopener">View on GitHub ↗</a>
+          <a class="btn btn--line" href="portfolio.html">Back to portfolio</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="contact" id="contact">
+  <div class="contact__stripes" aria-hidden="true"></div>
+  <div class="wrap contact__inner">
+    <span class="script">say hi</span>
+    <h2>Let’s work <em>together.</em></h2>
+    <p class="contact__lede">I’m looking for internships and future roles in software engineering and UI/UX. I’d love to hear from you.</p>
+    <div class="contact__row">
+      <a class="btn btn--cream" href="mailto:izziecheath@gmail.com">izziecheath@gmail.com</a>
+      <a class="btn btn--ghost" href="https://www.linkedin.com/in/isabelleheath05" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn btn--ghost" href="https://github.com/izzie-heath" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn btn--ghost" href="Isabelle_Heath_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+    </div>
+    <div class="contact__meta">
+      <span>Provo, UT · <a href="tel:+12813232295">(281) 323-2295</a></span>
+      <span>© 2026 Isabelle Heath · <a href="#top">Back to top ↑</a></span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

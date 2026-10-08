@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Funeral Memories case study — Isabelle Heath</title>
+<meta name="description" content="Case study: designing Funeral Memories, a shared memory wall for honoring a loved one, in Figma and building it in React at the BYU Family History Technology Lab.">
+<meta name="theme-color" content="#e85234">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23E85234'/%3E%3Ctext x='16' y='22.5' font-size='17' font-weight='700' text-anchor='middle' fill='%23FFF9F2' font-family='sans-serif'%3Eih%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Figtree:wght@400;500;600;700&family=Unbounded:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="hero cs-hero" id="top">
+  <div class="wrap">
+    <nav class="topbar" aria-label="Primary">
+      <a class="wordmark" href="index.html">isabelle heath</a>
+      <ul class="pills">
+        <li><a class="pill" href="Isabelle_Heath_Resume.pdf" target="_blank" rel="noopener">Resume</a></li>
+        <li><a class="pill" href="portfolio.html">UI Portfolio</a></li>
+        <li><a class="pill" href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="cs-hero__grid">
+      <div class="cs-hero__copy">
+        <span class="script">case study</span>
+        <h1>Funeral Memories</h1>
+        <p class="hero__lede">A shared memory wall where family and friends add photos and stories to honor a loved one. I designed every screen in Figma and built the front end in TypeScript, CSS, and React. It’s live now.</p>
+        <ul class="tags" aria-label="Focus areas"><li>UI/UX</li><li>TypeScript &amp; React</li><li>FamilySearch</li></ul>
+        <div class="hero__cta">
+          <a class="btn" href="https://funeral-memories.fhtl.org/" target="_blank" rel="noopener">Visit the live site ↗</a>
+          <a class="btn btn--line" href="#screens">See the screens</a>
+        </div>
+      </div>
+      <figure class="browser">
+        <div class="browser__bar" aria-hidden="true"><i></i><i></i><i></i></div>
+        <img src="images/funeral-memories/home-hero.jpg" width="1512" height="712" alt="The live Funeral Memories home page: the headline “Share and honor the memories of your loved ones,” with Join a Group and Host a New Group buttons on a deep teal background">
+      </figure>
+    </div>
+  </div>
+</header>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <div class="marquee__group">
+      <span>UI design</span><i>✱</i><span>Figma to React</span><i>✱</i><span>User flows</span><i>✱</i><span>FamilySearch</span><i>✱</i><span>RootsTech</span><i>✱</i>
+    </div>
+    <div class="marquee__group">
+      <span>UI design</span><i>✱</i><span>Figma to React</span><i>✱</i><span>User flows</span><i>✱</i><span>FamilySearch</span><i>✱</i><span>RootsTech</span><i>✱</i>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+
+  <section class="facts-wrap" aria-label="Project facts" style="padding-bottom:0">
+    <div class="wrap">
+      <dl class="facts">
+        <div><dt>My role</dt><dd>Designed every Figma mockup and wrote the front end in TypeScript, CSS, and React</dd></div>
+        <div><dt>Team</dt><dd>Samuel Ampuero, Jocelyn Perucca, and me, at the BYU Family History Technology Lab</dd></div>
+        <div><dt>Presented at</dt><dd>RootsTech 2026 and the BYU Family History Workshop 2026</dd></div>
+        <div><dt>Status</dt><dd>Live at <a href="https://funeral-memories.fhtl.org/" target="_blank" rel="noopener">funeral-memories.fhtl.org</a></dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section id="how" aria-labelledby="how-title">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="script">the idea</span>
+        <h2 id="how-title" class="h2">A place to remember together</h2>
+      </div>
+      <div class="prose" style="margin-top:0">
+        <p>Funeral Memories is a shared space for preserving and celebrating the life of a loved one. A host creates a memory wall for the person being honored, and family and friends add photos and stories to it.</p>
+        <p>It connects to FamilySearch, so hosts can find the person there. Afterward the wall can be exported as a PDF or published to FamilySearch.</p>
+      </div>
+      <ol class="steps" style="list-style:none;margin:clamp(32px,4vw,56px) 0 0;padding:0">
+        <li class="step"><b>01</b><h3>Create a memory page</h3><p>Set up a dedicated page for your loved one with a title, details, and access settings.</p></li>
+        <li class="step"><b>02</b><h3>Share with friends</h3><p>Invite close family and friends so everyone can contribute meaningful stories together.</p></li>
+        <li class="step"><b>03</b><h3>Share photos &amp; stories</h3><p>Collect cherished photos, memories, and messages in one place that can be revisited anytime.</p></li>
+        <li class="step"><b>04</b><h3>Publish to FamilySearch</h3><p>Publish the memories to FamilySearch so your family history can be preserved in one lasting place.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="redesign" aria-labelledby="redesign-title">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="script">the challenge</span>
+        <h2 id="redesign-title" class="h2">Redoing the UI of a working app</h2>
+        <p>The lab already had a working version. It did the job, but it lacked the warmth and professionalism the lab wanted for this industry, so they asked me to redo the UI.</p>
+      </div>
+
+      <div class="pair">
+        <h3 class="pair__title">Home</h3>
+        <figure class="figure">
+          <span class="pair__tag pair__tag--before">Before</span>
+          <a class="figure__frame browser" href="images/funeral-memories/before-home.jpg" target="_blank" rel="noopener">
+            <span class="browser__bar" aria-hidden="true"><i></i><i></i><i></i></span>
+            <img src="images/funeral-memories/before-home.jpg" width="1512" height="1000" loading="lazy" alt="The original home page: a plain green header, a Welcome to Funeral Memories heading, and bright blue and green Bootstrap buttons">
+          </a>
+        </figure>
+        <span class="pair__arrow" aria-label="became" role="img">→</span>
+        <figure class="figure">
+          <span class="pair__tag pair__tag--after">After · live site</span>
+          <a class="figure__frame browser" href="images/funeral-memories/after-home.jpg" target="_blank" rel="noopener">
+            <span class="browser__bar" aria-hidden="true"><i></i><i></i><i></i></span>
+            <img src="images/funeral-memories/after-home.jpg" width="1512" height="1000" loading="lazy" alt="The redesigned home page: a cream header, a deep teal hero with a serif headline and tan buttons, and a four-step How It Works section">
+          </a>
+        </figure>
+      </div>
+      <div class="pair">
+        <h3 class="pair__title">Choose your role</h3>
+        <figure class="figure">
+          <span class="pair__tag pair__tag--before">Before</span>
+          <a class="figure__frame browser" href="images/funeral-memories/before-role.jpg" target="_blank" rel="noopener">
+            <span class="browser__bar" aria-hidden="true"><i></i><i></i><i></i></span>
+            <img src="images/funeral-memories/before-role.jpg" width="1512" height="846" loading="lazy" alt="The original role screen: a plain heading and a bright blue Join as Guest button above an outlined Join as Admin button">
+          </a>
+        </figure>
+        <span class="pair__arrow" aria-label="became" role="img">→</span>
+        <figure class="figure">
+          <span class="pair__tag pair__tag--after">After · live site</span>
+          <a class="figure__frame browser" href="images/funeral-memories/after-role.jpg" target="_blank" rel="noopener">
+            <span class="browser__bar" aria-hidden="true"><i></i><i></i><i></i></span>
+            <img src="images/funeral-memories/after-role.jpg" width="3024" height="1684" loading="lazy" alt="The redesigned role screen: Choose Your Role with Join as Guest and Join as Admin options on the left, and a tan Join Group card with a Group ID field on the right">
+          </a>
+        </figure>
+      </div>
+      <div class="pair">
+        <h3 class="pair__title">Host a group</h3>
+        <figure class="figure">
+          <span class="pair__tag pair__tag--before">Before</span>
+          <a class="figure__frame browser" href="images/funeral-memories/before-host.jpg" target="_blank" rel="noopener">
+            <span class="browser__bar" aria-hidden="true"><i></i><i></i><i></i></span>
+            <img src="images/funeral-memories/before-host.jpg" width="1512" height="935" loading="lazy" alt="The original host form: a thin progress bar above plain form fields and a green Continue button">
+          </a>
+        </figure>
+        <span class="pair__arrow" aria-label="became" role="img">→</span>
+        <figure class="figure">
+          <span class="pair__tag pair__tag--after">After · Figma design</span>
+          <a class="figure__frame browser" href="images/funeral-memories/host.jpg" target="_blank" rel="noopener">
+            <span class="browser__bar" aria-hidden="true"><i></i><i></i><i></i></span>
+            <img src="images/funeral-memories/host.jpg" width="1512" height="935" loading="lazy" alt="The redesigned host card: a tan card with email and password fields, a teal Continue button, and a progress bar below">
+          </a>
+        </figure>
+      </div>
+      <div class="pair">
+        <h3 class="pair__title">Set an expiration</h3>
+        <figure class="figure">
+          <span class="pair__tag pair__tag--before">Before</span>
+          <a class="figure__frame browser" href="images/funeral-memories/before-expire.jpg" target="_blank" rel="noopener">
+            <span class="browser__bar" aria-hidden="true"><i></i><i></i><i></i></span>
+            <img src="images/funeral-memories/before-expire.jpg" width="1512" height="935" loading="lazy" alt="The original expiration screen: a thin progress bar, red warning text, and a bright blue Set Expiration and Continue button">
+          </a>
+        </figure>
+        <span class="pair__arrow" aria-label="became" role="img">→</span>
+        <figure class="figure">
+          <span class="pair__tag pair__tag--after">After · Figma design</span>
+          <a class="figure__frame browser" href="images/funeral-memories/expire.jpg" target="_blank" rel="noopener">
+            <span class="browser__bar" aria-hidden="true"><i></i><i></i><i></i></span>
+            <img src="images/funeral-memories/expire.jpg" width="1512" height="935" loading="lazy" alt="The redesigned expiration card: a tan card with a clear note about the date limits and a teal button, with a progress bar below">
+          </a>
+        </figure>
+      </div>
+
+      <div class="sub-head">
+        <span class="eyebrow">What changed</span>
+        <h3 class="h2" style="font-size:clamp(1.3rem,2.4vw,1.8rem)">From default styling to a design of its own</h3>
+      </div>
+      <div class="decisions">
+        <article class="box decision">
+          <span class="n" aria-hidden="true">1</span>
+          <p class="heard">Color and type with warmth</p>
+          <p>Default Bootstrap blue and green gave way to deep teal, warm tan, and soft cream. Headings use Instrument Serif, with DM Sans for everything you read or tap.</p>
+        </article>
+        <article class="box decision">
+          <span class="n" aria-hidden="true">2</span>
+          <p class="heard">A cleaner, calmer layout</p>
+          <p>Each screen got more space, a clear heading, and one focused card. The old green header and white pages became a cream header and generous margins.</p>
+        </article>
+        <article class="box decision">
+          <span class="n" aria-hidden="true">3</span>
+          <p class="heard">Custom CSS instead of Bootstrap styles</p>
+          <p>In the code, I replaced Bootstrap’s default styling with a CSS system of my own, organized by page and component, and rebuilt the pages in React and TypeScript.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--beige)" id="screens" aria-labelledby="screens-title">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="script" style="color:var(--deep)">hosting a wall</span>
+        <h2 id="screens-title" class="h2">The host flow, step by step</h2>
+        <p>Setup runs through a short series of cards, and a progress bar under each one shows how far along the host is.</p>
+      </div>
+
+      <div class="screens">
+        <figure class="figure">
+          <a class="figure__frame browser" href="images/funeral-memories/host.jpg" target="_blank" rel="noopener">
+            <span class="browser__bar" aria-hidden="true"><i></i><i></i><i></i></span>
+            <img src="images/funeral-memories/host.jpg" width="1512" height="935" loading="lazy" alt="Host a Group card with email and password fields and a Continue button, with a progress bar below">
+          </a>
+          <figcaption><strong>1. Host a group</strong><span>Hosts start with an email and a password.</span></figcaption>
+        </figure>
+        <figure class="figure">
+          <a class="figure__frame browser" href="images/funeral-memories/person.jpg" target="_blank" rel="noopener">
+            <span class="browser__bar" aria-hidden="true"><i></i><i></i><i></i></span>
+            <img src="images/funeral-memories/person.jpg" width="1512" height="935" loading="lazy" alt="Select a Relative card with two options: Find Through FamilySearch, or Add Person Manually">
+          </a>
+          <figcaption><strong>2. Select a relative</strong><span>Find the person through FamilySearch, or add them manually.</span></figcaption>
+        </figure>
+        <figure class="figure">
+          <a class="figure__frame browser" href="images/funeral-memories/search.jpg" target="_blank" rel="noopener">
+            <span class="browser__bar" aria-hidden="true"><i></i><i></i><i></i></span>
+            <img src="images/funeral-memories/search.jpg" width="1406" height="900" loading="lazy" alt="Search results shown as tan cards, each with a name, years, birth and death places, spouse, and parents">
+          </a>
+          <figcaption><strong>3. Confirm the person</strong><span>Each result is a card with name, years, birth and death places, spouse, and parents.</span></figcaption>
+        </figure>
+        <figure class="figure">
+          <a class="figure__frame browser" href="images/funeral-memories/expire.jpg" target="_blank" rel="noopener">
+            <span class="browser__bar" aria-hidden="true"><i></i><i></i><i></i></span>
+            <img src="images/funeral-memories/expire.jpg" width="1512" height="935" loading="lazy" alt="Set Group Expiration Date card explaining the date must be within one month and at least 2 hours from now">
+          </a>
+          <figcaption><strong>4. Set an expiration</strong><span>The wall expires within one month, and at least 2 hours from now.</span></figcaption>
+        </figure>
+      </div>
+
+      <div class="sub-head">
+        <span class="eyebrow">The result</span>
+        <h3 class="h2" style="font-size:clamp(1.3rem,2.4vw,1.8rem)">The memory wall</h3>
+      </div>
+      <div class="mockups">
+        <figure class="figure">
+          <a class="figure__frame browser" href="images/funeral-memories/wall.jpg" target="_blank" rel="noopener">
+            <span class="browser__bar" aria-hidden="true"><i></i><i></i><i></i></span>
+            <img src="images/funeral-memories/wall.jpg" width="1512" height="1500" loading="lazy" alt="Memory wall with a tan header, a Group ID with a copy button, a QR code to share, and All Memories and My Memories tabs above an empty grid of memory tiles">
+          </a>
+          <figcaption><span>Memory wall with sample data.</span><a href="images/funeral-memories/wall.jpg" target="_blank" rel="noopener">Open full size ↗</a></figcaption>
+        </figure>
+        <div class="stack">
+          <article class="box">
+            <h3>One link or code to share</h3>
+            <p>The wall shows its Group ID with a copy button, plus a QR code that can be enlarged, downloaded, and shared.</p>
+          </article>
+          <article class="box">
+            <h3>All memories, or just mine</h3>
+            <p>Tabs switch between every memory on the wall and the ones you added.</p>
+          </article>
+          <article class="box">
+            <h3>Ground rules</h3>
+            <p>Only the person who wrote a memory can edit or delete it, unless an admin removes it. Hosts can export the wall as a PDF or publish it to FamilySearch. Publishing deletes the wall, so export first.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="joining" aria-labelledby="joining-title">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="script">joining a wall</span>
+        <h2 id="joining-title" class="h2">Guests and admins</h2>
+        <p>Everyone starts by choosing a role. Guests can view and share memories with just the Group ID. Admins also sign in with the email and password they saved.</p>
+      </div>
+      <div class="mockups">
+        <figure class="figure">
+          <a class="figure__frame browser" href="images/funeral-memories/role.jpg" target="_blank" rel="noopener">
+            <span class="browser__bar" aria-hidden="true"><i></i><i></i><i></i></span>
+            <img src="images/funeral-memories/role.jpg" width="1512" height="935" loading="lazy" alt="Choose Your Role screen with Join as Guest (view and share memories) and Join as Admin buttons">
+          </a>
+          <figcaption><span>Choose your role.</span></figcaption>
+        </figure>
+        <div class="stack">
+          <figure class="figure">
+            <div class="figure__frame"><img src="images/funeral-memories/popup-guest.jpg" width="501" height="365" loading="lazy" alt="Join Group pop-up asking for a Group ID, with a Continue button"></div>
+            <figcaption><span>Guests enter a Group ID.</span></figcaption>
+          </figure>
+          <figure class="figure">
+            <div class="figure__frame"><img src="images/funeral-memories/popup-admin.jpg" width="501" height="464" loading="lazy" alt="Admin Login pop-up asking for a Group ID, admin email, and password"></div>
+            <figcaption><span>Admins add their email and password.</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--blue)" id="look" aria-labelledby="look-title">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="script" style="color:var(--deep)">the look</span>
+        <h2 id="look-title" class="h2">Calm, warm, and readable</h2>
+        <p>Deep teal and warm tan on a soft cream page, with a condensed serif for headings and a clean sans for everything you read or tap.</p>
+      </div>
+      <div class="swatches" role="list" aria-label="Color palette">
+        <div class="swatch" role="listitem"><div class="swatch__chip" style="background:#1c495e"></div><p><strong>Teal</strong>#1C495E<br>Hero, buttons, text</p></div>
+        <div class="swatch" role="listitem"><div class="swatch__chip" style="background:#b08459"></div><p><strong>Tan</strong>#B08459<br>Headers and cards</p></div>
+        <div class="swatch" role="listitem"><div class="swatch__chip" style="background:#fffff0"></div><p><strong>Cream</strong>#FFFFF0<br>Page</p></div>
+        <div class="swatch" role="listitem"><div class="swatch__chip" style="background:#f5f5e6"></div><p><strong>Stone</strong>#F5F5E6<br>Tiles and panels</p></div>
+      </div>
+      <figure class="figure" style="margin-top:clamp(32px,4vw,56px)">
+        <a class="figure__frame browser" href="images/funeral-memories/home.jpg" target="_blank" rel="noopener" style="max-width:760px;margin-inline:auto">
+          <span class="browser__bar" aria-hidden="true"><i></i><i></i><i></i></span>
+          <img src="images/funeral-memories/home.jpg" width="1512" height="2333" loading="lazy" alt="Full Funeral Memories home page: hero, a How It Works section with three steps, and a footer linking to other BYU Family History Technology Lab projects">
+        </a>
+        <figcaption style="justify-content:center"><span>The full home page.</span><a href="images/funeral-memories/home.jpg" target="_blank" rel="noopener">Open full size ↗</a></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section style="background:var(--pink)" id="presenting" aria-labelledby="presenting-title">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="script" style="color:var(--deep)">taking it on stage</span>
+        <h2 id="presenting-title" class="h2">Presenting Funeral Memories</h2>
+        <p>I presented the project at the 2026 BYU Family History Workshop and at RootsTech 2026.</p>
+      </div>
+      <div class="pres">
+        <figure class="figure">
+          <div class="figure__frame"><img src="images/funeral-memories/presenting-rootstech.jpg" width="916" height="1000" loading="lazy" alt="Three students in BYU sweatshirts and RootsTech lanyards standing beside a printed Funeral Memories poster on an easel"></div>
+          <figcaption><span>At RootsTech 2026 with our poster. From left: Samuel Ampuero, Jocelyn Perucca, and me.</span></figcaption>
+        </figure>
+        <figure class="figure">
+          <div class="figure__frame"><img src="images/funeral-memories/presenting-talk.jpg" width="1574" height="840" loading="lazy" alt="Three presenters at a podium in a conference room, with a projected slide titled Our Website showing Funeral Memories screens"></div>
+          <figcaption><span>Presenting the project to a room of family history professionals.</span></figcaption>
+        </figure>
+      </div>
+      <div class="bigstat" style="margin-top:clamp(40px,6vw,72px)">
+        <b>200+</b>
+        <p>people across RootsTech and BYU, where I presented the project.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ask" style="padding-top:clamp(64px,9vw,120px)" aria-labelledby="ask-title">
+    <div class="wrap">
+      <div class="ask__box">
+        <span class="tag">More work</span>
+        <h2 id="ask-title" class="h2">See it live</h2>
+        <p>Funeral Memories is live. More case studies are on the way.</p>
+        <div class="hero__cta" style="justify-content:center">
+          <a class="btn" href="https://funeral-memories.fhtl.org/" target="_blank" rel="noopener">Visit the live site ↗</a>
+          <a class="btn btn--line" href="portfolio.html">Back to portfolio</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="contact" id="contact">
+  <div class="contact__stripes" aria-hidden="true"></div>
+  <div class="wrap contact__inner">
+    <span class="script">say hi</span>
+    <h2>Let’s work <em>together.</em></h2>
+    <p class="contact__lede">I’m looking for internships and future roles in software engineering and UI/UX. I’d love to hear from you.</p>
+    <div class="contact__row">
+      <a class="btn btn--cream" href="mailto:izziecheath@gmail.com">izziecheath@gmail.com</a>
+      <a class="btn btn--ghost" href="https://www.linkedin.com/in/isabelleheath05" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn btn--ghost" href="https://github.com/izzie-heath" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn btn--ghost" href="Isabelle_Heath_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+    </div>
+    <div class="contact__meta">
+      <span>Provo, UT · <a href="tel:+12813232295">(281) 323-2295</a></span>
+      <span>© 2026 Isabelle Heath · <a href="#top">Back to top ↑</a></span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
